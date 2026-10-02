@@ -1,0 +1,6 @@
+# 📄 Dosya Yolu: /data/.gitkeep
+# 📌 Amac: Public THOR artifact dizinini Git icinde tutmak
+# 📌 ClientDistribution - GitKeep
+# Version: 1.0.0
+# Aciklama: Otomatik publish pipeline bu dizine aktif THOR dosyalarini yazar
+# Bagimli Oldugu Katman: Tool
