@@ -1,0 +1,6 @@
+# 📄 Dosya Yolu: /.nojekyll
+# 📌 Amac: GitHub Pages kullanildiginda patch dosyalarinin Jekyll islemesine girmemesini saglamak
+# 📌 ClientDistribution - Config
+# Version: 1.0.0
+# Aciklama: Static patch dagitiminda dosyalar oldugu gibi sunulur
+# Bagimli Oldugu Katman: Tool
