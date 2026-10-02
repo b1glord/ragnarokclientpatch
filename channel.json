@@ -4,8 +4,13 @@
   "product": "Ragnar Ragnarok Online",
   "channel": "development",
   "source_branch": "1.5.1",
-  "stable_checkpoint": "v1.5.0",
   "target_version": "1.5.1",
+  "source_commit": "76c49da13026d38b38a90b7c95240b04030dc2a8",
   "patch_format": "thor",
-  "patchers": ["thor-legacy", "rpatchur", "beam"]
+  "published_patch_count": 26,
+  "patchers": [
+    "thor-legacy",
+    "rpatchur",
+    "beam"
+  ]
 }

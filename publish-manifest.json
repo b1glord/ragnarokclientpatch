@@ -1,0 +1,164 @@
+{
+  "_file_path": "/publish-manifest.json",
+  "product": "Ragnar Ragnarok Online",
+  "source_commit": "76c49da13026d38b38a90b7c95240b04030dc2a8",
+  "generated_at_utc": "2026-10-02T19:56:49.8963712Z",
+  "files": [
+    {
+      "index": 1,
+      "file": "ragnardata.thor",
+      "sha256": "e927c831b7f634f32c8fa909baa0013c16449268f08c3c4ec39c4382684cb23f",
+      "size": 62
+    },
+    {
+      "index": 2,
+      "file": "custom-aura.thor",
+      "sha256": "dcc84a0c63a60ffdf8abae67f7972475d7dca3d91100073cd7440e1ec14af908",
+      "size": 130747
+    },
+    {
+      "index": 3,
+      "file": "custom-cursor.thor",
+      "sha256": "7d61ab9eba25c3366bf3d5452710826a177e8475375f3595571e68083ead4b6b",
+      "size": 5124
+    },
+    {
+      "index": 4,
+      "file": "custom-game-font.thor",
+      "sha256": "7e91065865d194aada2a1565b35ae11be7479e712224b15166e08c9044923288",
+      "size": 2360
+    },
+    {
+      "index": 5,
+      "file": "custom-loadingscreen.thor",
+      "sha256": "e5b758a716388aa0f06b433cdbc0bad10c1062af04e6599083500654c8ccb48a",
+      "size": 3412792
+    },
+    {
+      "index": 7,
+      "file": "custom-npc.thor",
+      "sha256": "dc506bd6c129fbb2f87a343bee4a2d89dbcbd0c2e063881bebcd9d6c436c2f8b",
+      "size": 1067354
+    },
+    {
+      "index": 8,
+      "file": "custom-npcsplash.thor",
+      "sha256": "736451f8b615d0b3977352a2d13d923aee896797b0d7e82c5afcc3dfebe63553",
+      "size": 3462790
+    },
+    {
+      "index": 9,
+      "file": "custom-skilleffect.thor",
+      "sha256": "422feaca9201d839508f843600b87cdd2c87ada11377c290d898b9a416a2ca4d",
+      "size": 3060699
+    },
+    {
+      "index": 10,
+      "file": "dailyreward8day.thor",
+      "sha256": "0da7b27d69fa96343e1867c9ef493a75e8fb4ff5bd134fb225d4e671fb7d77a2",
+      "size": 3986587
+    },
+    {
+      "index": 11,
+      "file": "dailyreward28day-part1.thor",
+      "sha256": "19bba6ec1e41080e10f1ba84d6b291a34365306a57c274532fbe268295777a1c",
+      "size": 10204480
+    },
+    {
+      "index": 12,
+      "file": "dailyreward28day-part2.thor",
+      "sha256": "a3cca0dc6421c30b01d65bab77b6574027623f29d67606d5c15b69dfca0ea052",
+      "size": 8921112
+    },
+    {
+      "index": 13,
+      "file": "DATA.INI.thor",
+      "sha256": "f9d24604b87a93de9289cfc91f32ca4e364aaf23dcde7c337c99e44cf99d9ad5",
+      "size": 292
+    },
+    {
+      "index": 14,
+      "file": "dotawav.thor",
+      "sha256": "4cd933dba93b626b06e964501ca6bf2a285b470a1077f9e7eaf28c4ebbc7e561",
+      "size": 1233555
+    },
+    {
+      "index": 15,
+      "file": "emblem.thor",
+      "sha256": "893c685fa659cc5928721d1397fc796d73f35d2c19936cfeb5adf9fc21518341",
+      "size": 5111
+    },
+    {
+      "index": 16,
+      "file": "game-exe.thor",
+      "sha256": "7ae4768cebeefb72f1f43cb0cd82359e0d4c1febf195987e39c278725c4630e1",
+      "size": 4657237
+    },
+    {
+      "index": 18,
+      "file": "sclientinfo.thor",
+      "sha256": "f4bd97d23a30e7ad55aa50c5fc8ee2f4f50b871ee6c63038fe6e29d8e0657669",
+      "size": 942
+    },
+    {
+      "index": 21,
+      "file": "setup.thor",
+      "sha256": "c637287abb153e06b093efe345036b6d7a09b2f57d6b71f561c0808b6486d8f2",
+      "size": 267257
+    },
+    {
+      "index": 22,
+      "file": "skin-Phieti Renewal.thor",
+      "sha256": "3e9c7edc1cbfbf8f4d900366c015ff7c69e425ad465d31c7176a51a6571806e1",
+      "size": 506481
+    },
+    {
+      "index": 23,
+      "file": "skin-raPzLight.thor",
+      "sha256": "13beb68ff4dba43cc1061dc3c84604b8d9ed5a574e55bf34e747a675abeeb410",
+      "size": 994797
+    },
+    {
+      "index": 25,
+      "file": "translate-english.thor",
+      "sha256": "e45d019f18826908acd4ba91749e5d68fa1d02e5e7ee53b226b9f0d7b9ae58f0",
+      "size": 1189476
+    },
+    {
+      "index": 26,
+      "file": "translate-englishdata.thor",
+      "sha256": "dfb3bf1cd7a54cb9e668d0892a792b706604db7ee9c6b06ac01936139df59e15",
+      "size": 9086126
+    },
+    {
+      "index": 27,
+      "file": "translate-skillinfoz.thor",
+      "sha256": "e27de9683985be41b9b81afe030f57ee0248244a28c51abc57a4538f9475b4ab",
+      "size": 206965
+    },
+    {
+      "index": 28,
+      "file": "translate-System.thor",
+      "sha256": "99caabc3942c3cd32014f710b481954ac552f20e145207ec762ce8f7c5a7b95b",
+      "size": 3163178
+    },
+    {
+      "index": 29,
+      "file": "translate-warning.thor",
+      "sha256": "73c008533ecd788611d66e2289614e81e1a5bd67b1be1e95527f0dcdd22fd0e6",
+      "size": 3453260
+    },
+    {
+      "index": 31,
+      "file": "custom-maps01.thor",
+      "sha256": "5c91d150d1d3a4135cbcd0c51a65d68b5cbba06f1ae4087f8ece111941f1595e",
+      "size": 8791873
+    },
+    {
+      "index": 32,
+      "file": "ddraw.thor",
+      "sha256": "de622628edc24ad8f6091834611f05b16c3fb5fb03bb2375ee26ae2e02e067f3",
+      "size": 1114543
+    }
+  ]
+}

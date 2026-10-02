@@ -2,7 +2,7 @@
 // Purpose: Generated Thor patch order. Do not edit manually.
 // Module - Text
 // Version: 1.0.0
-// Description: Generated from config/patch-sequence.yml
+// Description: Generated from central patch sequence config
 // Dependency Layer: Tool
 
 1 ragnardata.thor
