@@ -1,0 +1,17 @@
+{
+  "_file_path": "/2022/channel.json",
+  "product": "Ragnar Ragnarok Online",
+  "client_profile": "2022",
+  "exact_build": "unresolved",
+  "status": "candidate-audit",
+  "ready": false,
+  "source_commit": "d03ed574a3ad7959b9c749215e3367cd63f72a85",
+  "patch_format": "thor",
+  "published_patch_count": 0,
+  "publish_block_reason": "Exact 2022 build and compatibility audit are not complete.",
+  "patchers": [
+    "thor-legacy",
+    "rpatchur",
+    "beam"
+  ]
+}

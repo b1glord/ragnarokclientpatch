@@ -1,0 +1,39 @@
+# 📄 Dosya Yolu: /patcher/rpatchur/config.template.yml
+# 📌 Amac: RPatchur icin Ragnar Ragnarok Online marka, executable ve remote THOR dagitim ayarlarini sablon olarak tanimlamak
+# 📌 Patcher - YAML
+# Version: 1.0.0
+# Aciklama: Public patch dagitim URL'si deployment sirasinda https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015 placeholderi ile doldurulur
+# Bagimli Oldugu Katman: Tool | View
+
+window:
+  title: "Ragnar Ragnarok Online"
+  width: 900
+  height: 620
+  resizable: false
+
+play:
+  path: "Ragnar Ragnarok Online.exe"
+  arguments: []
+  exit_on_success: true
+
+setup:
+  path: "setup.exe"
+  arguments: []
+  exit_on_success: false
+
+web:
+  index_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015/rpatchur/index.html"
+  preferred_patch_server: "Ragnar Primary"
+  patch_servers:
+    - name: "Ragnar Primary"
+      plist_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015/plist.txt"
+      patch_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015/data/"
+
+client:
+  default_grf_name: "ragnardata.grf"
+
+patching:
+  in_place: true
+  check_integrity: true
+  create_grf: true
+

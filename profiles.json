@@ -1,0 +1,22 @@
+{
+  "_file_path": "/profiles.json",
+  "product": "Ragnar Ragnarok Online",
+  "generated_at_utc": "2026-10-02T20:08:51.8445885Z",
+  "root_compatibility_profile": "2015",
+  "profiles": [
+    {
+      "id": "2015",
+      "status": "legacy-frozen",
+      "ready": true,
+      "path": "/2015",
+      "exact_build": "unresolved"
+    },
+    {
+      "id": "2022",
+      "status": "candidate-audit",
+      "ready": false,
+      "path": "/2022",
+      "exact_build": "unresolved"
+    }
+  ]
+}

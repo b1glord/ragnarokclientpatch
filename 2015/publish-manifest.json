@@ -1,8 +1,8 @@
 {
-  "_file_path": "/publish-manifest.json",
+  "_file_path": "/2015/publish-manifest.json",
   "product": "Ragnar Ragnarok Online",
   "client_profile": "2015",
-  "compatibility_alias": true,
+  "status": "legacy-frozen",
   "source_commit": "d03ed574a3ad7959b9c749215e3367cd63f72a85",
   "generated_at_utc": "2026-10-02T20:08:51.8445885Z",
   "files": [

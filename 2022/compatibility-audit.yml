@@ -1,0 +1,55 @@
+# 📄 Dosya Yolu: /config/2022-compatibility-audit.yml
+# 📌 Amac: Legacy THOR paketlerinin 2022 client profiline tasinma durumunu siniflandirmak
+# 📌 ClientDistribution - YAML
+# Version: 1.0.0
+# Aciklama: Paketleri yeniden kullanilabilir aday, yeniden uretilecek ve derin audit gerektiren gruplara ayirir
+# Bagimli Oldugu Katman: Tool | Config
+
+version: "1.0.0"
+profile: "2022"
+status: "audit-required"
+
+groups:
+  asset_candidates:
+    status: "test-required"
+    packages:
+      - "custom-aura.thor"
+      - "custom-cursor.thor"
+      - "custom-game-font.thor"
+      - "custom-loadingscreen.thor"
+      - "custom-npc.thor"
+      - "custom-npcsplash.thor"
+      - "custom-skilleffect.thor"
+      - "custom-maps01.thor"
+      - "dotawav.thor"
+      - "emblem.thor"
+      - "skin-Phieti Renewal.thor"
+      - "skin-raPzLight.thor"
+
+  rebuild_required:
+    status: "blocked"
+    packages:
+      - "ragnardata.thor"
+      - "DATA.INI.thor"
+      - "game-exe.thor"
+      - "sclientinfo.thor"
+      - "setup.thor"
+      - "ddraw.thor"
+      - "steam_api.thor"
+
+  data_system_sensitive:
+    status: "deep-audit-required"
+    packages:
+      - "translate-english.thor"
+      - "translate-englishdata.thor"
+      - "translate-skillinfoz.thor"
+      - "translate-System.thor"
+      - "translate-warning.thor"
+      - "dailyreward8day.thor"
+      - "dailyreward28day-part1.thor"
+      - "dailyreward28day-part2.thor"
+
+rules:
+  - "Legacy package must never be published to 2022 before explicit approval."
+  - "Exact 2022 client build must be selected before runtime or system patch creation."
+  - "Approved asset content should be rebuilt from source for the 2022 profile instead of copying old THOR binaries."

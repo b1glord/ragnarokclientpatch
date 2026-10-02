@@ -1,0 +1,64 @@
+# 📄 Dosya Yolu: /patcher/beam/config.template.yml
+# 📌 Amac: Beam Patcher icin Ragnar Ragnarok Online ve ortak THOR dagitim kanalini tanimlamak
+# 📌 Patcher - YAML
+# Version: 1.0.0
+# Aciklama: Beam ilk fazda mevcut THOR paketlerini kullanir, native BEAM formati opsiyonel kanal olarak saklanir
+# Bagimli Oldugu Katman: Tool | View
+
+app:
+  name: "Ragnar Ragnarok Online"
+  version: "1.5.1"
+  window_title: "Ragnar Ragnarok Online"
+  game_directory: null
+  client_exe: "Ragnar Ragnarok Online.exe"
+  setup_exe: "setup.exe"
+  bgm_autoplay: false
+  bgm_file: null
+  server_name: "Ragnar Ragnarok Online"
+  video_background_enabled: false
+  video_background_file: null
+  grid_images: null
+  discord_url: null
+  register_url: null
+  social_links: null
+  limited_items: null
+
+patcher:
+  mirrors:
+    - name: "Ragnar Primary"
+      url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015/data"
+      priority: 1
+  patch_list_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015/beam/patchlist.txt"
+  target_grf: "ragnardata.grf"
+  allow_manual_patch: true
+  verify_checksums: true
+
+ui:
+  theme: "default"
+  custom_css: null
+  logo: null
+  background: null
+  show_progress: true
+  show_file_list: true
+  news_feed_url: null
+  server_status_url: null
+  status_image_url: null
+  custom_buttons: []
+  layout:
+    width: 900
+    height: 620
+    use_custom_layout: false
+
+sso:
+  enabled: false
+  login_url: "https://example.invalid/oauth/authorize"
+  token_url: "https://example.invalid/oauth/token"
+  client_id: "ragnar-patcher"
+  redirect_uri: "http://localhost:8080/callback"
+
+updater:
+  enabled: false
+  check_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015/beam/version.json"
+  update_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2015/beam/updates"
+  auto_update: false
+
