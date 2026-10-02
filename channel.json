@@ -7,7 +7,7 @@
   "channel": "development",
   "source_branch": "1.5.1",
   "target_version": "1.5.1",
-  "source_commit": "2c6316d9b0ec91930fe4c294ec5c072500536e97",
+  "source_commit": "357f2bc82014d5524f92e1a75e37c6d82cb261be",
   "patch_format": "thor",
   "published_patch_count": 26,
   "patchers": [
