@@ -1,0 +1,11 @@
+{
+  "_file_path": "/channel.json",
+  "_purpose": "Ragnar Ragnarok Online public patch channel metadata",
+  "product": "Ragnar Ragnarok Online",
+  "channel": "development",
+  "source_branch": "1.5.1",
+  "stable_checkpoint": "v1.5.0",
+  "target_version": "1.5.1",
+  "patch_format": "thor",
+  "patchers": ["thor-legacy", "rpatchur", "beam"]
+}
