@@ -1,0 +1,39 @@
+// File Path: patcher/web/generated/plist.txt
+// Purpose: Generated Thor patch order. Do not edit manually.
+// Module - Text
+// Version: 1.0.0
+// Description: Generated from config/patch-sequence.yml
+// Dependency Layer: Tool
+
+1 ragnardata.thor
+2 custom-aura.thor
+3 custom-cursor.thor
+4 custom-game-font.thor
+5 custom-loadingscreen.thor
+//6 custom-login-theme.thor
+7 custom-npc.thor
+8 custom-npcsplash.thor
+9 custom-skilleffect.thor
+10 dailyreward8day.thor
+11 dailyreward28day-part1.thor
+12 dailyreward28day-part2.thor
+13 DATA.INI.thor
+14 dotawav.thor
+15 emblem.thor
+16 game-exe.thor
+//17 emblem.thor
+18 sclientinfo.thor
+//19 sclientinfo1.thor
+//20 sclientinfo2.thor
+21 setup.thor
+22 skin-Phieti Renewal.thor
+23 skin-raPzLight.thor
+//24 steam_api.thor
+25 translate-english.thor
+26 translate-englishdata.thor
+27 translate-skillinfoz.thor
+28 translate-System.thor
+29 translate-warning.thor
+//30 sclientinfo1.thor
+31 custom-maps01.thor
+32 ddraw.thor
