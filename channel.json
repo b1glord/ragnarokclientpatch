@@ -1,11 +1,13 @@
 {
   "_file_path": "/channel.json",
-  "_purpose": "Ragnar Ragnarok Online public patch channel metadata",
+  "_purpose": "2015 compatibility alias for Ragnar Ragnarok Online patch distribution",
   "product": "Ragnar Ragnarok Online",
+  "client_profile": "2015",
+  "compatibility_alias": true,
   "channel": "development",
   "source_branch": "1.5.1",
   "target_version": "1.5.1",
-  "source_commit": "76c49da13026d38b38a90b7c95240b04030dc2a8",
+  "source_commit": "afac0f9fb7c8a8c7af49a6e80c5116f552bd0493",
   "patch_format": "thor",
   "published_patch_count": 26,
   "patchers": [

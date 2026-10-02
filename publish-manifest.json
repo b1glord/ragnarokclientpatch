@@ -1,8 +1,10 @@
 {
   "_file_path": "/publish-manifest.json",
   "product": "Ragnar Ragnarok Online",
-  "source_commit": "76c49da13026d38b38a90b7c95240b04030dc2a8",
-  "generated_at_utc": "2026-10-02T19:56:49.8963712Z",
+  "client_profile": "2015",
+  "compatibility_alias": true,
+  "source_commit": "afac0f9fb7c8a8c7af49a6e80c5116f552bd0493",
+  "generated_at_utc": "2026-10-02T20:07:43.8987840Z",
   "files": [
     {
       "index": 1,
