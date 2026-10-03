@@ -5,7 +5,7 @@
   "exact_build": "unresolved",
   "status": "candidate-audit",
   "ready": false,
-  "source_commit": "357f2bc82014d5524f92e1a75e37c6d82cb261be",
+  "source_commit": "c3205096baccdd465ae94e63a63ed43a21382e01",
   "patch_format": "thor",
   "published_patch_count": 0,
   "publish_block_reason": "Exact 2022 build and compatibility audit are not complete.",
