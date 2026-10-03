@@ -7,7 +7,7 @@
   "server_compatibility": "20220406-candidate",
   "status": "candidate-audit",
   "ready": false,
-  "source_commit": "32e89ebbf40a299e9b005a0a5d0b07143d2a9862",
+  "source_commit": "4f97eacfc69c5120d4c801cfff1dc0881dd92ee0",
   "patch_format": "thor",
   "published_patch_count": 0,
   "publish_block_reason": "20220406 client artifact audit and rebuilt patch compatibility checks are not complete.",
