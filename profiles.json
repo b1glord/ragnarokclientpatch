@@ -1,7 +1,7 @@
 {
   "_file_path": "/profiles.json",
   "product": "Ragnar Ragnarok Online",
-  "generated_at_utc": "2026-10-03T13:08:33.0745383Z",
+  "generated_at_utc": "2026-10-03T13:09:16.8240322Z",
   "root_compatibility_profile": "2015",
   "profiles": [
     {
@@ -16,7 +16,9 @@
       "status": "candidate-audit",
       "ready": false,
       "path": "/2022",
-      "exact_build": "unresolved"
+      "exact_build": "20220406",
+      "packetver": 20220406,
+      "server_compatibility": "20220406-candidate"
     }
   ]
 }

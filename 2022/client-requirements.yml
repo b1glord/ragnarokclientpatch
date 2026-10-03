@@ -1,0 +1,44 @@
+# 📄 Dosya Yolu: /config/2022-client-requirements.yml
+# 📌 Amac: 20220406 client profili aktif edilmeden once kontrol edilmesi gereken istemci varliklarini tanimlamak
+# 📌 ClientDistribution - YAML
+# Version: 1.1.0
+# Aciklama: Server hedefi cozulmus 20220406 client icin executable, GRF, clientinfo ve System/Lua migration gereksinimlerini listeler
+# Bagimli Oldugu Katman: Tool | Config
+
+version: "1.1.0"
+profile: "2022"
+
+required_decisions:
+  exact_client_build: "20220406"
+  packetver: 20220406
+  server_compatibility: "20220406-candidate"
+  executable_type: "unresolved"
+  target_grf: "unresolved"
+
+resolved_checks:
+  server_packetver_alignment: true
+  server_end_to_end_login: true
+  server_map_spawn: true
+
+required_checks:
+  - "candidate executable SHA-256"
+  - "candidate executable file/product version"
+  - "DATA.INI GRF order"
+  - "clientinfo.xml or sclientinfo.xml location"
+  - "System Lua/Lub layout"
+  - "setup executable compatibility"
+  - "Nemo/client patch compatibility"
+  - "2022 bootstrap patch rebuild"
+  - "2022 translation/System patch rebuild"
+  - "Thor apply smoke test"
+  - "RPatchur apply smoke test"
+  - "Beam apply smoke test"
+
+publishing:
+  allowed: false
+  unblock_when:
+    - "20220406 client artifact audit recorded"
+    - "executable type and target GRF resolved"
+    - "bootstrap patches rebuilt"
+    - "system-sensitive audit passed"
+    - "three patcher smoke tests passed"

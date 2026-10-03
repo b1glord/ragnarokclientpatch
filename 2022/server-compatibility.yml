@@ -1,0 +1,30 @@
+# 📄 Dosya Yolu: /config/client-server-compatibility.yml
+# 📌 Amac: RagnarokClient 2022 profili ile RagnarokServer 20220406 candidate baseline arasindaki uyumluluk kontratini sabitlemek
+# 📌 ClientDistribution - YAML
+# Version: 1.0.0
+# Aciklama: Client build, PACKETVER, server compatibility id ve dogrulanmis end-to-end test sonucunu merkezi olarak tanimlar
+# Bagimli Oldugu Katman: Tool | Config
+
+version: "1.0.0"
+
+client:
+  profile: "2022"
+  exact_build: "20220406"
+  packetver: 20220406
+  artifact_audit_status: "pending"
+
+server:
+  repository: "LevelUpGT/RagnarokServer"
+  manifest_path: "manifest.yml"
+  compatibility_id: "20220406-candidate"
+  engine_repository: "b1glord/rathena"
+  engine_frozen_ref: "release/20220406-ragnarokserver-s1"
+  engine_commit: "2993c0baa64ec41181d0cf465635f988e12f3893"
+
+verification:
+  client_login: "passed"
+  character_server_list: "passed"
+  character_select_create: "passed"
+  map_transition: "passed"
+  map_spawn: "passed"
+  patch_distribution: "pending"
