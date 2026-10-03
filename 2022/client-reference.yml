@@ -1,0 +1,26 @@
+# 📄 Dosya Yolu: /config/20220406-client-reference.yml
+# 📌 Amac: 20220406 client artifact auditinde kullanilacak kimlik ipuclarini ve kabul politikasini tanimlamak
+# 📌 ClientDistribution - YAML
+# Version: 1.0.0
+# Aciklama: Referans executable adini hash yerine ipucu olarak tutar; canonical SHA-256 yalniz gercek yerel client auditinden kabul edilir
+# Bagimli Oldugu Katman: Tool | Config
+
+version: "1.0.0"
+
+client:
+  exact_build: "20220406"
+  packetver: 20220406
+  expected_executable_family: "Ragexe"
+  known_reference_filename: "2022-04-06_Ragexe_1648707856.exe"
+
+identity_policy:
+  filename_is_hint_only: true
+  require_local_sha256: true
+  require_pe_version_capture: true
+  require_clientinfo_layout_capture: true
+  require_grf_order_capture: true
+  canonical_sha256: "unresolved"
+
+server:
+  compatibility_id: "20220406-candidate"
+  end_to_end_status: "passed"
