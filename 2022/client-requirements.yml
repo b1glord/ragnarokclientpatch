@@ -1,11 +1,11 @@
 # 📄 Dosya Yolu: /config/2022-client-requirements.yml
 # 📌 Amac: 20220406 client profili aktif edilmeden once kontrol edilmesi gereken istemci varliklarini tanimlamak
 # 📌 ClientDistribution - YAML
-# Version: 1.1.0
+# Version: 1.2.0
 # Aciklama: Server hedefi cozulmus 20220406 client icin executable, GRF, clientinfo ve System/Lua migration gereksinimlerini listeler
 # Bagimli Oldugu Katman: Tool | Config
 
-version: "1.1.0"
+version: "1.2.0"
 profile: "2022"
 
 required_decisions:
@@ -19,13 +19,16 @@ resolved_checks:
   server_packetver_alignment: true
   server_end_to_end_login: true
   server_map_spawn: true
+  roenglishre_20220406_source_imported: true
+  clientinfo_source_available: true
+  system_translation_source_available: true
 
 required_checks:
   - "candidate executable SHA-256"
   - "candidate executable file/product version"
   - "DATA.INI GRF order"
   - "clientinfo.xml or sclientinfo.xml location"
-  - "System Lua/Lub layout"
+  - "System Lua/Lub layout against imported ROenglishRE 20220406 snapshot"
   - "setup executable compatibility"
   - "Nemo/client patch compatibility"
   - "2022 bootstrap patch rebuild"
