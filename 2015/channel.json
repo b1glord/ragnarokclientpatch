@@ -5,7 +5,7 @@
   "exact_build": "unresolved",
   "status": "legacy-frozen",
   "ready": true,
-  "source_commit": "b43354ea73ef555033b63f2285cbcfee7db40656",
+  "source_commit": "00aa80a4424dade96ed04b2c087858a27aabc720",
   "patch_format": "thor",
   "published_patch_count": 26,
   "patchers": [

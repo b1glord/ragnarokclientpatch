@@ -1,11 +1,11 @@
 # 📄 Dosya Yolu: /config/2022-compatibility-audit.yml
 # 📌 Amac: Legacy THOR paketlerinin 2022 client profiline tasinma durumunu siniflandirmak
 # 📌 ClientDistribution - YAML
-# Version: 1.0.0
+# Version: 1.1.0
 # Aciklama: Paketleri yeniden kullanilabilir aday, yeniden uretilecek ve derin audit gerektiren gruplara ayirir
 # Bagimli Oldugu Katman: Tool | Config
 
-version: "1.0.0"
+version: "1.1.0"
 profile: "2022"
 status: "audit-required"
 
@@ -38,7 +38,9 @@ groups:
       - "steam_api.thor"
 
   data_system_sensitive:
-    status: "deep-audit-required"
+    status: "source-imported-audit-required"
+    source: "patches/2022/source/roenglishre/20220406"
+    source_commit: "af2191234a22e180fac62d179489b64f3d17a997"
     packages:
       - "translate-english.thor"
       - "translate-englishdata.thor"
