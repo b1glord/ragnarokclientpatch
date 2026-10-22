@@ -1,0 +1,27 @@
+{
+  "schema": "levelupgt.public-beam-distribution-policy.v1",
+  "client_profile": "2022",
+  "exact_client_build": "20220406",
+  "channel": "candidate-audit",
+  "ready": false,
+  "publish_allowed": false,
+  "published_patch_count": 0,
+  "format": "beam-v1",
+  "target_grf_candidate": "tdata1.grf",
+  "source_repository": "LevelUpGT/RagnarokClient",
+  "package_builder_repository": "LevelUpGT/beam-patcher",
+  "distribution_repository": "b1glord/ragnarokclientpatch",
+  "artifact_directory": "2022/data",
+  "patch_list": "2022/beam/patchlist.txt",
+  "candidate_artifact": "custom-maps.beam",
+  "candidate_status": "offline-tested-not-approved",
+  "approval_requirements": [
+    "real-client-exe-hash-and-pe-version",
+    "DATA.INI-and-tdata1.grf-client-loader-qa",
+    "beam-patcher-runtime-guard-and-signed-manifest",
+    "isolated-grf-apply-readback-backup-rollback",
+    "rathena-mapcache-approved-install",
+    "all-five-maps-in-game-smoke",
+    "explicit-publish-approval"
+  ]
+}
