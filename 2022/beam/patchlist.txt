@@ -1,0 +1,4 @@
+# 20220406 Beam channel RESERVED / NOT READY
+# No patch filenames: 2022/channel.json has ready=false and published_patch_count=0.
+# Never copy 2015 THOR entries into this feed.
+# NOTE: empty file alone is not an authorization/security control.
