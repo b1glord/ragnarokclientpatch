@@ -18,6 +18,21 @@ or release manifest are authorized.
 - Legacy `2015/` and root `data/`, `beam/`, `plist.txt` are immutable
   compatibility aliases for the 2015 THOR clients.
 
+## Candidate patcher configuration (deliberately non-runnable)
+
+[config.yml.template](config.yml.template) describes the **future** 2022
+Beam-only `tdata1.grf` config, with the public empty patch list.
+It contains `client_exe_sha256: UNRESOLVED_NO_RUN` and a nonexistent
+`UNRESOLVED-20220406.exe` placeholder. Do **not** rename, distribute or
+activate this template. The protected 2022 EXE identity and signed policy
+must be verified and recorded first. The currently frozen
+`2022/channel.json` retains its old candidate profile metadata; it is not
+an authorization to deploy a THOR package to 2022.
+
+Private RagnarokClient can run a **read-only** cross-repo plan with
+`py -3 -B tools/PLAN-BEAM-DISTRIBUTION.py`; the command never uploads a
+package, and reports publication blocked while this profile is unready.
+
 ## Publishing gates
 
 Publishing is blocked until ALL of the following are recorded:
