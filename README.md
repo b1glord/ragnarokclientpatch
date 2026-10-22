@@ -19,7 +19,7 @@ Dagitim kanallari:
 - RPatchur
 - Beam
 
-Uc patcher da ilk fazda ayni canonical `.thor` paketlerini kullanir.
+**Bu ortak THOR akisi sadece 2015/legacy uyumluluk kanali icindir.** 20220406 profili farkli ve su an kilitlidir (`2022/channel.json`: `ready: false`). Yeni BEAM v1 adaylari, kaynagi `LevelUpGT/RagnarokClient`, olusturucusu `LevelUpGT/beam-patcher` olacak sekilde ayri bir 2022/beam dagitim kanali uzerinden, yalnizca onaydan sonra yayimlanabilir.
 
 ## Public yapi
 
@@ -39,3 +39,11 @@ Uc patcher da ilk fazda ayni canonical `.thor` paketlerini kullanir.
 `beam/patchlist.txt` Beam tarafindan kullanilir ve ayni THOR paketlerinin SHA-256 degerlerini tasir.
 
 Bu repoya patch artifactleri elle duzenlenmek yerine private kaynak repodaki GitHub Actions pipeline'i tarafindan yayinlanir.
+
+## 20220406 icin ayrilmis BEAM dagitim kanali
+
+- [2022/beam/README.md](2022/beam/README.md) — kaynak, sahiplik ve onay kapilari.
+- [2022/beam/channel-policy.json](2022/beam/channel-policy.json) — yayina kapali kanal sozlesmesi.
+- [2022/beam/patchlist.txt](2022/beam/patchlist.txt) — bilerek bos; oyunculara paket yonlendirmez.
+
+**Dikkat:** `data/`, `beam/`, `plist.txt` kok aliaslari 2015'e aittir, yeni haritalar bu yollara eklenmez. `2022/data/` altinda su anda onaylanmis `.beam` paketi bulunmaz. Patch dosyalarini hazirlamak, yayin izni verildigi anlamina gelmez.
