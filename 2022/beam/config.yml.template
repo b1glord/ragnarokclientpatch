@@ -1,0 +1,77 @@
+# DOSYA YOLU: 2022/beam/config.yml.template
+# AMAC: 20220406 BEAM channel candidate configuration, deliberately NOT runnable
+# MODULE: YAML example (never copy to config.yml before EXE+GRF audit)
+# VERSION: 0.1.0-candidate
+# Not a published player config; channel ready=false, no target GRF or EXE identity.
+
+# 📄 Dosya Yolu: /patcher/beam/config.template.yml
+# 📌 Amac: Beam Patcher icin Ragnar Ragnarok Online ve ortak THOR dagitim kanalini tanimlamak
+# 📌 Patcher - YAML
+# Version: 1.0.0
+# Aciklama: Beam ilk fazda mevcut THOR paketlerini kullanir, native BEAM formati opsiyonel kanal olarak saklanir
+# Bagimli Oldugu Katman: Tool | View
+
+app:
+  name: "Ragnar Ragnarok Online"
+  version: "0.0.0-candidate-NOT-READY"
+  window_title: "Ragnar Ragnarok Online"
+  game_directory: null
+  client_exe: "UNRESOLVED-20220406.exe"
+  setup_exe: "setup.exe"
+  bgm_autoplay: false
+  bgm_file: null
+  server_name: "Ragnar Ragnarok Online"
+  video_background_enabled: false
+  video_background_file: null
+  grid_images: null
+  discord_url: null
+  register_url: null
+  social_links: null
+  limited_items: null
+
+patcher:
+  mirrors:
+    - name: "Ragnar Primary"
+      url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2022/data"
+      priority: 1
+  patch_list_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2022/beam/patchlist.txt"
+  target_grf: "tdata1.grf"
+  allow_manual_patch: false
+  verify_checksums: true
+  # REQUIRED before any profile can run. Deliberate invalid SHA -> fail closed.
+  compatibility_guard:
+    profile_id: "levelupgt-custom-20220406"
+    region: "levelupgt"
+    channel: "custom"
+    client_exe_sha256: "UNRESOLVED_NO_RUN"
+    manifest_file: "regional-patches.json"
+
+ui:
+  theme: "default"
+  custom_css: null
+  logo: null
+  background: null
+  show_progress: true
+  show_file_list: true
+  news_feed_url: null
+  server_status_url: null
+  status_image_url: null
+  custom_buttons: []
+  layout:
+    width: 900
+    height: 620
+    use_custom_layout: false
+
+sso:
+  enabled: false
+  login_url: "https://example.invalid/oauth/authorize"
+  token_url: "https://example.invalid/oauth/token"
+  client_id: "ragnar-patcher"
+  redirect_uri: "http://localhost:8080/callback"
+
+updater:
+  enabled: false
+  check_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2022/beam/version.json"
+  update_url: "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/2022/beam/updates"
+  auto_update: false
+
