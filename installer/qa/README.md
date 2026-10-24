@@ -7,7 +7,7 @@ Aciklama: Public source-only reusable workflow; no private repo fetch or gamepla
 Bagimli Oldugu Katman: GitHub Actions | LevelUpGT/beam-patcher | Turkuaz QA
 -->
 
-# Public Ragnar Windows Installer (QA)
+# Turkuaz Ragnarok Online - Public Windows Installer (QA)
 
 The public installer artifact is **built and downloaded from the public
 distribution repository**: `b1glord/ragnarokclientpatch`. The source
@@ -19,13 +19,13 @@ contacted by this QA build or by the installed preview executable.
 
 - Workflow: `.github/workflows/public-ragnar-installer-qa.yml`
 - Pinned Beam source workflow and source commit:
-  `4ac038f09235b6824941a7313668125e3c78fb29`
+  `1289a50d8f230f8c739a4ad8dae088dd6355b992`
 - Turkuaz Installer Community upstream dependency is separately pinned
   within the Beam QA reusable workflow.
 - GitHub Actions executes the reusable workflow **in the public
   distribution repository context**, so its temporary Windows EXE
   artifact appears on the run under `b1glord/ragnarokclientpatch`.
-- Client downloads only the resulting `RagnarClassic-Turkuaz-Setup.exe`,
+- Client downloads only the resulting `Turkuaz-Ragnarok-Online-Setup.exe`,
   not a source repo, PAT, development SDK, private git checkout, or
   embedded Turkuaz .NET/WinUI distribution.
 - All upstream code inputs are readable public repos; the workflow
@@ -74,3 +74,26 @@ confirms repository ownership, immutability and the absence of an
 unapproved deployment. The called Windows CI builds and exercises the
 real QA installer (including TurkuazInstaller CLI install/uninstall).
 A green Actions build is not a real Windows 10 GUI smoke.
+
+
+## Canonical product name and internal profile identity (2026-10-24)
+
+- User-visible app and standalone EXE: **Turkuaz Ragnarok Online**, `Turkuaz-Ragnarok-Online-Setup.exe`.
+- Internal `client-identity.json` in the QA Actions artifact distinguishes
+  `profile_id=preview-qa`, `installer_version=0.1.0`,
+  immutable public Beam `source_commit`, `channel=qa` and
+  `production_publish_allowed=false`; `client_year`, `client_build` and
+  `packetver` are all null for this **visual preview**.
+- Reserved future client profiles `classic-2015` and `renewal-2022`
+  are *not* buildable by this QA workflow until real signed game-client
+  provenance and separately tested patch channels exist. The existing
+  `2015` patch aliases are not migrated and `2022 ready: false` /
+  `publish_allowed: false` remain unchanged.
+- The artifact name (internal) records `preview-qa` and the workflow
+  source commit. The human-facing EXE filename does not leak protocol
+  year or unrelated build identifiers.
+- Concept C installer artwork is an **optional SHA-256-pinned file** at
+  `tools/windows/ragnar-turkuaz-qa/branding/concept-c-background.png`
+  in the pinned Beam commit, not a network download. Until that exact
+  reviewed binary is committed, setup falls back to the earlier teal
+  gradient. No unapproved remote image, AV bypass or production release.

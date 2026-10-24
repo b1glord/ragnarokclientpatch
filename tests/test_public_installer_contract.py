@@ -34,6 +34,18 @@ class PublicInstallerContract(unittest.TestCase):
         self.assertNotIn("release:", content)
         self.assertIn("2022/beam/check_reserved_channel.py", content)
 
+    def test_public_product_name_private_client_identity(self):
+        workflow = WORKFLOW.read_text(encoding="utf-8")
+        readme = (ROOT / "installer/qa/README.md").read_text(encoding="utf-8")
+        self.assertIn("Turkuaz-Ragnarok-Online-Setup.exe", readme)
+        self.assertIn("client-identity.json", readme)
+        self.assertIn("preview-qa", readme)
+        self.assertIn("classic-2015", readme)
+        self.assertIn("renewal-2022", readme)
+        self.assertIn("packetver", readme)
+        self.assertIn("production_publish_allowed=false", readme)
+        self.assertIn("source_ref: ", workflow)
+
     def test_channel_docs_preserve_public_private_split(self):
         readme = (ROOT / "installer/qa/README.md").read_text(encoding="utf-8")
         self.assertIn("ready: false", readme)
