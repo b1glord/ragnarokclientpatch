@@ -19,7 +19,7 @@ contacted by this QA build or by the installed preview executable.
 
 - Workflow: `.github/workflows/public-ragnar-installer-qa.yml`
 - Pinned Beam source workflow and source commit:
-  `81ffefaffaac7c952cf36a76cffd1f3a6e7cc917`
+  `4ac038f09235b6824941a7313668125e3c78fb29`
 - Turkuaz Installer Community upstream dependency is separately pinned
   within the Beam QA reusable workflow.
 - GitHub Actions executes the reusable workflow **in the public
