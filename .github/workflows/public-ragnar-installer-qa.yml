@@ -50,6 +50,6 @@ jobs:
       contents: read
     # Immutable trusted public source. The caller's actions artifact lives
     # in b1glord/ragnarokclientpatch, not in the source or private client repo.
-    uses: LevelUpGT/beam-patcher/.github/workflows/ragnar-turkuaz-installer-qa.yml@507dbc0b298e489a92b8ed06bba312505261d9a0
+    uses: LevelUpGT/beam-patcher/.github/workflows/ragnar-turkuaz-installer-qa.yml@81ffefaffaac7c952cf36a76cffd1f3a6e7cc917
     with:
-      source_ref: 507dbc0b298e489a92b8ed06bba312505261d9a0
+      source_ref: 81ffefaffaac7c952cf36a76cffd1f3a6e7cc917
