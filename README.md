@@ -47,3 +47,12 @@ Bu repoya patch artifactleri elle duzenlenmek yerine private kaynak repodaki Git
 - [2022/beam/patchlist.txt](2022/beam/patchlist.txt) — bilerek bos; oyunculara paket yonlendirmez.
 
 **Dikkat:** `data/`, `beam/`, `plist.txt` kok aliaslari 2015'e aittir, yeni haritalar bu yollara eklenmez. `2022/data/` altinda su anda onaylanmis `.beam` paketi bulunmaz. Patch dosyalarini hazirlamak, yayin izni verildigi anlamina gelmez.
+
+## Ragnar kurulum EXE - public QA
+
+Tek pencereli Turkuaz temali Ragnar **gorunum onizlemesi** kurulumunun
+kaynak derlemesi public `LevelUpGT/beam-patcher` commit'inden yapilir;
+QA artifact indirme noktasi bu public dagitim deposunun Actions sayfasidir.
+Private `LevelUpGT/RagnarokClient` oyuncu istemcisinden istenmez.
+Ayrintilar: [installer/qa/README.md](installer/qa/README.md).
+Bu akista release/aktif yama kanali yayinlanmaz.
