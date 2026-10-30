@@ -2,7 +2,7 @@
 # Dosya Yolu: REPO_ROOT/tests/check_patch_http_endpoints.py
 # Amac: Public patch URL'lerini gercek HTTP GET ve SHA256 ile salt-okunur denetlemek
 # Modul - Python CLI
-# Version: 1.0.0
+# Version: 1.1.0
 # Aciklama: Kanonik URL zorunlu; eski raw adresinin durumu ayrica raporlanir
 # Bagimli Oldugu Katman: Testing
 """Read-only HTTP smoke for the actual 2015 patch feed and small THOR assets."""
@@ -16,9 +16,14 @@ from pathlib import Path
 
 NEW_BASE = "https://raw.githubusercontent.com/LevelUpRagnarok/ragnarokclientpatch/main/"
 OLD_BASE = "https://raw.githubusercontent.com/b1glord/ragnarokclientpatch/main/"
-# Only small, existing assets; no installer or multi-megabyte game download.
-PATHS = ("plist.txt", "2015/plist.txt", "data/custom-cursor.thor", "2015/data/custom-cursor.thor")
-MAX_RESPONSE = 1024 * 1024
+# Fixed 2015 assets only; one real 8.8-MB map patch exercises larger downloads.
+# This tool downloads but never executes or applies any archive.
+PATHS = (
+    "plist.txt", "2015/plist.txt",
+    "data/custom-cursor.thor", "2015/data/custom-cursor.thor",
+    "data/custom-maps01.thor", "2015/data/custom-maps01.thor",
+)
+MAX_RESPONSE = 16 * 1024 * 1024
 
 
 def sha256(data):
