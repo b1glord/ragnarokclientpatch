@@ -1,7 +1,7 @@
 # Dosya Yolu: .github/workflows/public-ragnar-installer-qa.yml
 # Amac: Ragnar preview Windows installer test artifactini dogrudan public dagitim deposunda uretmek
 # Modul - GitHub Actions YAML
-# Version: 1.2.1-qa
+# Version: 1.2.2-qa
 # Aciklama: Tam olarak pinli public Beam kaynak commitinden build; private client'a baglanmaz
 # Bagimli Oldugu Katman: LevelUpRagnarok/beam-patcher reusable QA workflow | Public distribution
 
@@ -50,6 +50,6 @@ jobs:
       contents: read
     # Immutable trusted public source. The caller's actions artifact lives
     # in LevelUpRagnarok/ragnarokclientpatch, not in the source or private client repo.
-    uses: LevelUpRagnarok/beam-patcher/.github/workflows/ragnar-turkuaz-installer-qa.yml@073e30229fafb5056425db37e60a3e62593c4042
+    uses: LevelUpRagnarok/beam-patcher/.github/workflows/ragnar-turkuaz-installer-qa.yml@536c155af23c0528edfdbe88ef1c54215ae74bdf
     with:
-      source_ref: 073e30229fafb5056425db37e60a3e62593c4042
+      source_ref: 536c155af23c0528edfdbe88ef1c54215ae74bdf
