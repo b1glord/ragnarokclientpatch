@@ -2,29 +2,29 @@
 Dosya Yolu: installer/qa/README.md
 Amac: Public Ragnar test installerinin Beam build ve dagitim sinirini kaydetmek
 Modul - Markdown
-Version: 1.0.0-qa
+Version: 1.0.1-qa
 Aciklama: Public source-only reusable workflow; no private repo fetch or gameplay publication
-Bagimli Oldugu Katman: GitHub Actions | LevelUpGT/beam-patcher | Turkuaz QA
+Bagimli Oldugu Katman: GitHub Actions | LevelUpRagnarok/beam-patcher | Turkuaz QA
 -->
 
 # Turkuaz Ragnarok Online - Public Windows Installer (QA)
 
 The public installer artifact is **built and downloaded from the public
-distribution repository**: `b1glord/ragnarokclientpatch`. The source
-repository `LevelUpGT/beam-patcher` remains the source of Rust/Windows
-installer code. The private `LevelUpGT/RagnarokClient` repository is not
+distribution repository**: `LevelUpRagnarok/ragnarokclientpatch`. The source
+repository `LevelUpRagnarok/beam-patcher` remains the source of Rust/Windows
+installer code. The private `LevelUpRagnarok/RagnarokClient` repository is not
 contacted by this QA build or by the installed preview executable.
 
 ## Provenance and reproducible build
 
 - Workflow: `.github/workflows/public-ragnar-installer-qa.yml`
 - Pinned Beam source workflow and source commit:
-  `1289a50d8f230f8c739a4ad8dae088dd6355b992`
+  `073e30229fafb5056425db37e60a3e62593c4042`
 - Turkuaz Installer Community upstream dependency is separately pinned
   within the Beam QA reusable workflow.
 - GitHub Actions executes the reusable workflow **in the public
   distribution repository context**, so its temporary Windows EXE
-  artifact appears on the run under `b1glord/ragnarokclientpatch`.
+  artifact appears on the run under `LevelUpRagnarok/ragnarokclientpatch`.
 - Client downloads only the resulting `Turkuaz-Ragnarok-Online-Setup.exe`,
   not a source repo, PAT, development SDK, private git checkout, or
   embedded Turkuaz .NET/WinUI distribution.
