@@ -2,7 +2,7 @@
 # Dosya Yolu: REPO_ROOT/tests/test_patch_http_endpoints.py
 # Amac: Gercek HTTP smoke araci icin izole hata ve SHA regresyonlari
 # Modul - Python unittest
-# Version: 1.0.0
+# Version: 1.1.0
 # Aciklama: Yalnizca TEMP fixture ve taklit HTTP; network yok
 # Bagimli Oldugu Katman: Testing
 import importlib.util
@@ -50,7 +50,7 @@ class PatchHTTPTest(unittest.TestCase):
         result = TOOL.audit(self.root, opener=self.opener)
         self.assertTrue(result["canonical_ok"])
         self.assertTrue(result["legacy_all_verified"])
-        self.assertEqual(len(result["checks"]), 4)
+        self.assertEqual(len(result["checks"]), 6)
 
     def test_legacy_http_404_is_not_masked_as_compatible(self):
         def opener(req, timeout):
@@ -60,7 +60,7 @@ class PatchHTTPTest(unittest.TestCase):
         result = TOOL.audit(self.root, opener=opener)
         self.assertTrue(result["canonical_ok"])
         self.assertFalse(result["legacy_all_verified"])
-        self.assertEqual(len(result["legacy_warnings"]), 4)
+        self.assertEqual(len(result["legacy_warnings"]), 6)
         self.assertTrue(all(row["retired"]["status"] == 404 for row in result["checks"]))
 
     def test_canonical_sha_mismatch_blocks_success(self):
@@ -70,7 +70,7 @@ class PatchHTTPTest(unittest.TestCase):
             return self.opener(req, timeout)
         result = TOOL.audit(self.root, opener=opener)
         self.assertFalse(result["canonical_ok"])
-        self.assertEqual(len(result["canonical_failures"]), 4)
+        self.assertEqual(len(result["canonical_failures"]), 6)
 
     def test_response_larger_than_cap_is_rejected(self):
         result = TOOL.http_get(TOOL.NEW_BASE, "plist.txt", opener=lambda req, timeout:
