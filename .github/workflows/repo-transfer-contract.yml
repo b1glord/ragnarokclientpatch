@@ -1,7 +1,7 @@
 # Dosya Yolu: REPO_ROOT/.github/workflows/repo-transfer-contract.yml
 # Amac: Transfer sonrasi public patch URL ve paket butunlugu kontratini sinar
 # Modul - GitHub Actions YAML
-# Version: 1.0.0
+# Version: 1.1.0
 # Aciklama: Sadece read-only CI; kurulum/yayinlama yapmaz
 # Bagimli Oldugu Katman: Testing
 name: Public Patch URL Migration Contract
@@ -17,6 +17,8 @@ on:
       - "beam/config.yml"
       - "rpatchur/config.yml"
       - "tests/test_repo_transfer_contract.py"
+      - "tests/test_patch_http_endpoints.py"
+      - "tests/check_patch_http_endpoints.py"
       - ".github/workflows/repo-transfer-contract.yml"
   push:
     branches: [main]
@@ -29,6 +31,8 @@ on:
       - "beam/config.yml"
       - "rpatchur/config.yml"
       - "tests/test_repo_transfer_contract.py"
+      - "tests/test_patch_http_endpoints.py"
+      - "tests/check_patch_http_endpoints.py"
       - ".github/workflows/repo-transfer-contract.yml"
   workflow_dispatch:
 
@@ -45,5 +49,19 @@ jobs:
           persist-credentials: false
       - name: Verify canonical owner and legacy THOR source parity
         run: python3 -B -m unittest discover -s tests -p 'test_repo_transfer_contract.py' -v
+      - name: Check HTTP probe fail-closed behavior using mocked responses
+        run: python3 -B -m unittest discover -s tests -p 'test_patch_http_endpoints.py' -v
       - name: Verify reserved 2022 BEAM channel is still disabled
         run: python3 -B 2022/beam/check_reserved_channel.py --root .
+
+  live-http-readonly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: GET canonical and retired raw URLs and compare small real THOR SHA-256
+        run: python3 -B tests/check_patch_http_endpoints.py --root .
