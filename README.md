@@ -2,7 +2,7 @@
 Dosya Yolu: REPO_ROOT/README.md
 Amac: Ragnar Ragnarok Online istemci patch artifactlerini public olarak dagitmak
 Modul - Markdown
-Version: 1.0.1
+Version: 1.0.2
 Aciklama: Yeni organizasyonun kanonik URL'leri ve kilitli 2022 dagitim siniri
 Bagimli Oldugu Katman: Documentation
 -->
@@ -55,10 +55,19 @@ Bu repoya patch artifactleri elle duzenlenmek yerine private kaynak repodaki Git
 Kanonik public patch root:
 `https://raw.githubusercontent.com/LevelUpRagnarok/ragnarokclientpatch/main/`.
 
-Eski raw indirme URL'lerinin transfer sonrasinda calistigini varsaymayin.
+2026-10-30 itibariyla [salt-okunur HTTP smoke](https://github.com/LevelUpRagnarok/ragnarokclientpatch/actions/runs/41078436381),
+eski `b1glord` ve yeni `LevelUpRagnarok` raw adreslerinden `plist.txt`,
+`2015/plist.txt`, `data/custom-cursor.thor` ve
+`2015/data/custom-cursor.thor` dosyalarini HTTP 200 ile indirdi.
+Dort dosyanin SHA-256 degerleri her iki adreste de ayniydi.
+Bu deneme tum 26 THOR'un online testi veya Windows launcher smoke degildir.
+
 Kurulu istemcide onceden kayitli URL, burada bir template degisince otomatik
-guncellenmez. Oyuncuya yeni config gondermeden once izole 2015 istemcide
-gercek HTTP indirme, paket SHA-256 ve rollback testleri gereklidir.
+guncellenmez. Yeni konfigurasyonu oyuncuya dagitmadan once izole 2015 istemcide
+indirme, GRF uygulama, yedekleme ve rollback testleri gereklidir.
+Ayrica rPatchur `web.index_url` ile isaret edilen HTML dosyalarinin
+repo agacinda bulunmamasi [issue #3](https://github.com/LevelUpRagnarok/ragnarokclientpatch/issues/3)
+altinda takip edilmektedir.
 
 `2022/channel.json.ready=false` ve
 `2022/beam/channel-policy.json.publish_allowed=false` tutulur.
