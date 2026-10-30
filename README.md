@@ -1,9 +1,11 @@
-# 📄 Dosya Yolu: /README.md
-# 📌 Amac: Ragnar Ragnarok Online istemci patch artifactlerini public olarak dagitmak
-# 📌 ClientDistribution - Markdown
-# Version: 1.0.0
-# Aciklama: Private RagnarokClient reposundan uretilen THOR manifest ve patch dosyalarinin public dagitim noktasidir
-# Bagimli Oldugu Katman: Tool
+<!--
+Dosya Yolu: REPO_ROOT/README.md
+Amac: Ragnar Ragnarok Online istemci patch artifactlerini public olarak dagitmak
+Modul - Markdown
+Version: 1.0.1
+Aciklama: Yeni organizasyonun kanonik URL'leri ve kilitli 2022 dagitim siniri
+Bagimli Oldugu Katman: Documentation
+-->
 
 # Ragnar Ragnarok Online - Patch Distribution
 
@@ -11,7 +13,7 @@ Bu repo **kaynak kod reposu degildir**. Oyuncu istemcilerinin indirecegi public 
 
 Kaynak ve build pipeline:
 
-`LevelUpGT/RagnarokClient` (private)
+`LevelUpRagnarok/RagnarokClient` (private)
 
 Dagitim kanallari:
 
@@ -19,7 +21,7 @@ Dagitim kanallari:
 - RPatchur
 - Beam
 
-**Bu ortak THOR akisi sadece 2015/legacy uyumluluk kanali icindir.** 20220406 profili farkli ve su an kilitlidir (`2022/channel.json`: `ready: false`). Yeni BEAM v1 adaylari, kaynagi `LevelUpGT/RagnarokClient`, olusturucusu `LevelUpGT/beam-patcher` olacak sekilde ayri bir 2022/beam dagitim kanali uzerinden, yalnizca onaydan sonra yayimlanabilir.
+**Bu ortak THOR akisi sadece 2015/legacy uyumluluk kanali icindir.** 20220406 profili farkli ve su an kilitlidir (`2022/channel.json`: `ready: false`). Yeni BEAM v1 adaylari, kaynagi `LevelUpRagnarok/RagnarokClient`, olusturucusu `LevelUpRagnarok/beam-patcher` olacak sekilde ayri bir 2022/beam dagitim kanali uzerinden, yalnizca onaydan sonra yayimlanabilir.
 
 ## Public yapi
 
@@ -47,3 +49,17 @@ Bu repoya patch artifactleri elle duzenlenmek yerine private kaynak repodaki Git
 - [2022/beam/patchlist.txt](2022/beam/patchlist.txt) — bilerek bos; oyunculara paket yonlendirmez.
 
 **Dikkat:** `data/`, `beam/`, `plist.txt` kok aliaslari 2015'e aittir, yeni haritalar bu yollara eklenmez. `2022/data/` altinda su anda onaylanmis `.beam` paketi bulunmaz. Patch dosyalarini hazirlamak, yayin izni verildigi anlamina gelmez.
+
+## Organizasyon transferi ve indirme URL'leri
+
+Kanonik public patch root:
+`https://raw.githubusercontent.com/LevelUpRagnarok/ragnarokclientpatch/main/`.
+
+Eski raw indirme URL'lerinin transfer sonrasinda calistigini varsaymayin.
+Kurulu istemcide onceden kayitli URL, burada bir template degisince otomatik
+guncellenmez. Oyuncuya yeni config gondermeden once izole 2015 istemcide
+gercek HTTP indirme, paket SHA-256 ve rollback testleri gereklidir.
+
+`2022/channel.json.ready=false` ve
+`2022/beam/channel-policy.json.publish_allowed=false` tutulur.
+Bu sahiplik duzeltmesi bir release veya patch yayin izni degildir.
