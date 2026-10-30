@@ -2,7 +2,7 @@
 # Dosya Yolu: REPO_ROOT/tests/test_repo_transfer_contract.py
 # Amac: Public patch dagitim URL'leri ile 2015/2022 sahiplik ve butunluk kontrati
 # Modul - Python unittest
-# Version: 1.0.0
+# Version: 1.1.0
 # Aciklama: Network/yayinlama yok; kanonik adres, legacy paket ve yayin kilidi dogrulama
 # Bagimli Oldugu Katman: Testing
 """Offline checks for public patch repo transfer and channel isolation."""
@@ -90,6 +90,67 @@ class PublicPatchTransferTests(unittest.TestCase):
                         hashlib.file_digest(left, "sha256").digest(),
                         hashlib.file_digest(right, "sha256").digest(),
                     )
+
+
+    def test_all_26_patch_inventory_records_and_sha256_match(self):
+        """Compare both public lists, both JSON manifests and all real THOR bytes."""
+        lines = (ROOT / "plist.txt").read_text(encoding="utf-8").splitlines()
+        thor_order = []
+        indexes = set()
+        for line in lines:
+            line = line.strip()
+            if not line or line.startswith("//"):
+                continue
+            number, name = line.split(maxsplit=1)
+            self.assertTrue(number.isdecimal(), line)
+            self.assertNotIn(int(number), indexes)
+            indexes.add(int(number))
+            self.assertTrue(name.endswith(".thor"), name)
+            thor_order.append((int(number), name))
+        self.assertEqual(len(thor_order), 26)
+        self.assertEqual(len({name for _, name in thor_order}), 26)
+        self.assertEqual((ROOT / "2015/plist.txt").read_bytes(),
+                         (ROOT / "plist.txt").read_bytes())
+
+        def patchlist(directory):
+            pairs = []
+            for line in (ROOT / directory / "patchlist.txt").read_text(encoding="utf-8").splitlines():
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                name, digest = line.rsplit(maxsplit=1)
+                self.assertEqual(len(digest), 64, name)
+                int(digest, 16)
+                pairs.append((name, digest))
+            self.assertEqual(len(pairs), 26)
+            return pairs
+
+        expected_names = [name for _, name in thor_order]
+        root_list = patchlist("beam")
+        legacy_list = patchlist("2015/beam")
+        self.assertEqual(root_list, legacy_list)
+        self.assertEqual([name for name, _ in root_list], expected_names)
+        digests = dict(root_list)
+
+        root_manifest = json.loads((ROOT / "publish-manifest.json").read_text(encoding="utf-8"))
+        legacy_manifest = json.loads((ROOT / "2015/publish-manifest.json").read_text(encoding="utf-8"))
+        expected_records = root_manifest["files"]
+        self.assertEqual(expected_records, legacy_manifest["files"])
+        self.assertEqual(len(expected_records), 26)
+        self.assertEqual([(e["index"], e["file"]) for e in expected_records], thor_order)
+
+        for record in expected_records:
+            name = record["file"]
+            with self.subTest(asset=name):
+                self.assertEqual(record["sha256"], digests[name])
+                self.assertGreater(record["size"], 0)
+                for prefix in ("data", "2015/data"):
+                    item = ROOT / prefix / name
+                    self.assertTrue(item.is_file() and not item.is_symlink())
+                    self.assertEqual(item.stat().st_size, record["size"])
+                    with item.open("rb") as source:
+                        self.assertEqual(hashlib.file_digest(source, "sha256").hexdigest(),
+                                         record["sha256"])
 
 
 if __name__ == "__main__":
