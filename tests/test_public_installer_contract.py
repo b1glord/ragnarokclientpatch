@@ -1,7 +1,7 @@
 # Dosya Yolu: tests/test_public_installer_contract.py
 # Amac: Public Ragnar setup kaynak pin ve 2015/2022 yayin sinirlarini kilitlemek
 # Modul - Python unittest
-# Version: 1.0.0
+# Version: 1.0.1
 # Aciklama: Read-only repository QA workflow contract, NO game file I/O
 # Bagimli Oldugu Katman: Test | Public Artifact Delivery
 import re
@@ -17,16 +17,20 @@ class PublicInstallerContract(unittest.TestCase):
     def test_pinned_public_reusable_workflow_is_same_source(self):
         content = WORKFLOW.read_text(encoding="utf-8")
         match = re.search(
-            r"uses: LevelUpGT/beam-patcher/\.github/workflows/"
+            r"uses: LevelUpRagnarok/beam-patcher/\.github/workflows/"
             r"ragnar-turkuaz-installer-qa\.yml@([0-9a-f]{40})", content
         )
         self.assertIsNotNone(match, "PUBLIC_REUSABLE_WORKFLOW_PIN_REQUIRED")
         self.assertTrue(PIN.fullmatch(match.group(1)))
+        self.assertNotIn("LevelUpGT/beam-patcher", content)
+        self.assertNotIn("b1glord/ragnarokclientpatch", content)
+        docs = (ROOT / "installer/qa/README.md").read_text(encoding="utf-8")
+        self.assertIn(match.group(1), docs)
         self.assertIn("source_ref: " + match.group(1), content)
 
     def test_no_private_source_checkout_or_distribution(self):
         content = WORKFLOW.read_text(encoding="utf-8")
-        self.assertNotIn("LevelUpGT/RagnarokClient", content)
+        self.assertNotIn("LevelUpRagnarok/RagnarokClient", content)
         self.assertNotIn("secrets.", content)
         self.assertIn("contents: read", content)
         self.assertNotIn("actions/create-release", content)
@@ -50,7 +54,7 @@ class PublicInstallerContract(unittest.TestCase):
         readme = (ROOT / "installer/qa/README.md").read_text(encoding="utf-8")
         self.assertIn("ready: false", readme)
         self.assertIn("publish_allowed: false", readme)
-        self.assertIn("b1glord/ragnarokclientpatch", readme)
+        self.assertIn("LevelUpRagnarok/ragnarokclientpatch", readme)
         self.assertIn("not a production release", readme.lower())
 
 
