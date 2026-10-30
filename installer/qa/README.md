@@ -2,7 +2,7 @@
 Dosya Yolu: installer/qa/README.md
 Amac: Public Ragnar test installerinin Beam build ve dagitim sinirini kaydetmek
 Modul - Markdown
-Version: 1.0.1-qa
+Version: 1.0.2-qa
 Aciklama: Public source-only reusable workflow; no private repo fetch or gameplay publication
 Bagimli Oldugu Katman: GitHub Actions | LevelUpRagnarok/beam-patcher | Turkuaz QA
 -->
@@ -19,7 +19,7 @@ contacted by this QA build or by the installed preview executable.
 
 - Workflow: `.github/workflows/public-ragnar-installer-qa.yml`
 - Pinned Beam source workflow and source commit:
-  `073e30229fafb5056425db37e60a3e62593c4042`
+  `536c155af23c0528edfdbe88ef1c54215ae74bdf`
 - Turkuaz Installer Community upstream dependency is separately pinned
   within the Beam QA reusable workflow.
 - GitHub Actions executes the reusable workflow **in the public
